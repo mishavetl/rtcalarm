@@ -47,3 +47,12 @@ if __name__ == "__main__":
         exit(1)
 
     create_config()
+
+    print('Installing alarm.py utility. You can run it as \'alarm.py\'')
+
+    os.system([
+        'sudo ln -s {0} /usr/local/bin/alarm.py'.format(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'alarm.py'))
+        ][os.name == 'nt']
+    )
+
+    print('SUCCESS')
